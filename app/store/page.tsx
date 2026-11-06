@@ -1,7 +1,9 @@
 
 function page() {
   return (
-    <div>Store</div>
+    <>
+      <div>Store</div>
+    </>
   )
 }
 
