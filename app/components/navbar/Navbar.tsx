@@ -10,6 +10,7 @@ function Navbar() {
     const nav = [
         { name: 'خانه', route: '/' },
         { name: 'فروشگاه', route: '/store' },
+        { name: 'درباره ما', route: '/about' },
     ]
 
     const handleClick = () => {
