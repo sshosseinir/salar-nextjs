@@ -1,19 +1,31 @@
 import axios from "axios"
 
-export default async function ServerComponent() {
-    // const list = [
-    //     { id: 0, title: 'first' },
-    //     { id: 1, title: 'second' },
-    //     { id: 2, title: 'third' },
-    // ]
+export interface IData {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    image: string;
+    rating: Rating;
+}
 
-    const list = await axios('')
+export interface Rating {
+    rate: number;
+    count: number;
+}
+
+export default async function ServerComponent() {
+
+    const { data } = await axios('https://fakestoreapi.com/products')
+
+    console.log(data);
 
 
     return (
-        <div className='flex gap-2'>
+        <div className='flex flex-col gap-2'>
             {
-                list.map(item => {
+                data.map((item: IData) => {
                     return (
                         <div key={item.id}>{item.title}</div>
                     )
