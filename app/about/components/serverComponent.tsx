@@ -17,9 +17,20 @@ export interface Rating {
 
 export default async function ServerComponent() {
 
-    const { data } = await axios('https://fakestoreapi.com/products')
+    // const { data } = await axios('https://fakestoreapi.com/products')
 
-    console.log(data);
+    // console.log(data);
+
+    const result = await fetch('https://fakestoreapi.com/products',
+        {
+            cache: "force-cache"
+        }
+    )
+
+    console.log(result);
+
+    const data = await result.json();
+
 
 
     return (
