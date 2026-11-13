@@ -21,9 +21,16 @@ export default async function ServerComponent() {
 
     // console.log(data);
 
+    // const result = await fetch('https://fakestoreapi.com/products',
+    //     {
+    //         cache: "force-cache"
+    //     }
+    // )
     const result = await fetch('https://fakestoreapi.com/products',
         {
-            cache: "force-cache"
+            next: {
+                revalidate: 20
+            }
         }
     )
 
